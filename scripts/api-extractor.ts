@@ -821,7 +821,7 @@ async function main() {
   const selectedPackageDirs = await findSpecificPackageDirs(
     process.argv.slice(2).filter(arg => !arg.startsWith('--')),
   );
-  if (selectedPackageDirs && (isCiBuild || isDocsBuild)) {
+  if (selectedPackageDirs && isCiBuild) {
     throw new Error(
       'Package path arguments are not supported for the --ci and --docs flags',
     );
